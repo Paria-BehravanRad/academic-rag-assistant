@@ -2,6 +2,7 @@ from ingestion.pdf_loader import load_pdf
 from utils.text_cleaner import clean_text
 from ingestion.chunker import create_chunks
 from embeddings.embedder import create_embeddings
+from vectordb.store import VectorStore
 
 
 # =====================
@@ -37,17 +38,16 @@ print(f"Number of chunks: {len(chunks)}")
 # EMBEDDINGS
 # =====================
 
-embeddings = create_embeddings(chunks)
+#embeddings = create_embeddings(chunks)
 
-print("Embeddings created.")
-
+#print("Embeddings created.")
 
 # =====================
-# TEST
+# EMBEDDINGS + VECTORSTORE
 # =====================
 
-print("\nFirst chunk:\n")
-print(chunks[0])
+vs = VectorStore()
 
-print("\nEmbedding dimension:")
-print(len(embeddings[0]))
+vs.add_documents(chunks)
+
+print("Chunks stored in Vector DB.")
