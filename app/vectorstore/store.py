@@ -1,5 +1,5 @@
-from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from app.langchain_chroma import Chroma
+from app.langchain_huggingface import HuggingFaceEmbeddings
 class VectorStore:
     def __init__(self, persist_directory="vectordb"):
         self.embeddings = HuggingFaceEmbeddings(

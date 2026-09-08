@@ -1,4 +1,4 @@
-from sentence_transformers import SentenceTransformer
+from app.sentence_transformers import SentenceTransformer
 
 
 # load model once

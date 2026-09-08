@@ -1,4 +1,4 @@
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from app.langchain_text_splitters import RecursiveCharacterTextSplitter
 
 def create_chunks(text):
 
